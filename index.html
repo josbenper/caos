@@ -66,12 +66,78 @@
 	</div><!-- /header -->
 	
 	<div id="unidades">
-	<a href="#" onclick="hechi()" data-role="button"><img width="100" height="75" src="img/hechizero.jpg"> </a>
+	<a href="#" onclick="$.mobile.changePage('#hechi')" data-role="button"><img width="100" height="75" src="img/hechizero.jpg"> </a>
 	<a href="#" onclick="prindemo()" data-role="button"><img width="100" height="75" src="img/principe-demonio.jpg"></a>
 	<a href="#" onclick="senorcaos()" data-role="button"><img width="100" height="75" src="img/senorcaos.jpg"></a>
 	</div>
 
 </div>
 
+<div data-role="page" id="hechi">
+
+<div data-role="header">
+    <h1>Hechicero</h1>
+</div><!-- /header -->
+
+
+
+<script language="javascript" type="text/javascript">
+   function hechi(){
+	   var GHnombre = document.getElementById('nombre')
+		GHnombre.innerHTML = "Gran Hechizero"
+	   var GHpuntos = document.getElementById('puntos')
+		GHpuntos.innerHTML = 235
+	   var GHm = document.getElementById('M')
+		GHm.innerHTML = 4
+		
+	}
+</script>
+
+
+<div id="esta">
+	<table>
+		<tr>
+			<td><b>Nombre</b></td>
+			<td><b>Puntos</b></td>
+			<td><b>M</b></td>
+			<td><b>HA</b></td>
+			<td><b>HP</b></td>
+			<td><b>F</b></td>
+			<td><b>R</b></td>
+			<td><b>H</b></td>
+			<td><b>I</b></td>
+			<td><b>A</b></td>
+			<td><b>L</b></td>
+			<td><b>Sv</b></td>
+			<td><b>SvE</b></td>
+			<td><b>Reg</b></td>
+		</tr>
+		<tr>
+			<td><div id="nombre"></td>
+			<td><center><div id="puntos"></center></td>
+			<td><center><div id="M"></center></td>
+			<td><center><?php echo $GHha ?></center></td>
+			<td><center><?php echo $GHhp ?></center></td>
+			<td><center><?php echo $GHf ?></center></td>
+			<td><center><?php echo $GHr ?></center></td>
+			<td><center><?php echo $GHh ?></center></td>
+			<td><center><?php echo $GHi ?></center></td>
+			<td><center><?php echo $GHa ?></center></td>
+			<td><center><?php echo $GHl ?></center></td>
+			<td><center><?php echo $GHsv ?></center></td>
+			<td><center><?php echo $GHsve ?></center></td>
+			<td><center><?php echo $GHreg ?></center></td>
+		</tr>
+	</table>
+
+	<a href="#" onclick="hechiOK()" data-role="button" data-icon="check" data-iconpos="notext" data-theme="c" data-inline="true">Agregar</a>
+	<a href="#" onclick="hechiED()" data-role="button" data-icon="check" data-iconpos="notext" data-theme="c" data-inline="true">Editar</a>
+</div>
+
+</div>
+
+<script language="javascript">
+window.onload = hechi();
+</script>
 
 </body>
