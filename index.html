@@ -16,10 +16,6 @@
 
 <div data-role="page" id="page1">
 
-<?php include ('core/core.php'); ?>
-
-
-
    <!--
    <div data-role="header">
        <h1>Lista del Caos</h1>
@@ -82,14 +78,50 @@
 
 
 <script language="javascript" type="text/javascript">
-   function hechi(){
+function marca(){
+
+}
+   function hechi(){   
 	   var GHnombre = document.getElementById('nombre')
 		GHnombre.innerHTML = "Gran Hechizero"
 	   var GHpuntos = document.getElementById('puntos')
 		GHpuntos.innerHTML = 235
 	   var GHm = document.getElementById('M')
 		GHm.innerHTML = 4
-		
+		if (GHm.innerHTML==0)	GHm.innerHTML = "-";
+	   var GHha = document.getElementById('HA')
+		GHha.innerHTML = 5
+		if (GHha.innerHTML==0)	GHha.innerHTML = "-";
+	   var GHhp = document.getElementById('HP')
+		GHhp.innerHTML = 3
+		if (GHhp.innerHTML==0)	GHhp.innerHTML = "-";
+	   var GHm = document.getElementById('F')
+		GHm.innerHTML = 4
+		if (GHm.innerHTML==0)	GHm.innerHTML = "-";
+	   var GHm = document.getElementById('R')
+		GHm.innerHTML = 4
+		if (GHm.innerHTML==0)	GHm.innerHTML = "-";
+	   var GHm = document.getElementById('H')
+		GHm.innerHTML = 3
+		if (GHm.innerHTML==0)	GHm.innerHTML = "-";
+	   var GHm = document.getElementById('I')
+		GHm.innerHTML = 5
+		if (GHm.innerHTML==0)	GHm.innerHTML = "-";
+	   var GHm = document.getElementById('A')
+		GHm.innerHTML = 3
+		if (GHm.innerHTML==0)	GHm.innerHTML = "-";
+	   var GHm = document.getElementById('L')
+		GHm.innerHTML = 8
+		if (GHm.innerHTML==0)	GHm.innerHTML = "-";
+	   var GHm = document.getElementById('SV')
+		GHm.innerHTML = 0
+		if (GHm.innerHTML==0)	GHm.innerHTML = "-";
+	   var GHm = document.getElementById('SVE')
+		GHm.innerHTML = 0
+		if (GHm.innerHTML==0)	GHm.innerHTML = "-";
+	   var GHm = document.getElementById('REG')
+		GHm.innerHTML = 0
+		if (GHm.innerHTML==0)	GHm.innerHTML = "-";
 	}
 </script>
 
@@ -113,31 +145,167 @@
 			<td><b>Reg</b></td>
 		</tr>
 		<tr>
-			<td><div id="nombre"></td>
-			<td><center><div id="puntos"></center></td>
-			<td><center><div id="M"></center></td>
-			<td><center><?php echo $GHha ?></center></td>
-			<td><center><?php echo $GHhp ?></center></td>
-			<td><center><?php echo $GHf ?></center></td>
-			<td><center><?php echo $GHr ?></center></td>
-			<td><center><?php echo $GHh ?></center></td>
-			<td><center><?php echo $GHi ?></center></td>
-			<td><center><?php echo $GHa ?></center></td>
-			<td><center><?php echo $GHl ?></center></td>
-			<td><center><?php echo $GHsv ?></center></td>
-			<td><center><?php echo $GHsve ?></center></td>
-			<td><center><?php echo $GHreg ?></center></td>
+			<td><div id="nombre"></div></td>
+			<td><center><div id="puntos"></div></center></td>
+			<td><center><div id="M"></div></center></td>
+			<td><center><div id="HA"></div></center></td>
+			<td><center><div id="HP"></div></center></td>
+			<td><center><div id="F"></div></center></td>
+			<td><center><div id="R"></div></center></td>
+			<td><center><div id="H"></div></center></td>
+			<td><center><div id="I"></div></center></td>
+			<td><center><div id="A"></div></center></td>
+			<td><center><div id="L"></div></center></td>
+			<td><center><div id="SV"></div></center></td>
+			<td><center><div id="SVE"></div></center></td>
+			<td><center><div id="REG"></div></center></td>
 		</tr>
 	</table>
-
-	<a href="#" onclick="hechiOK()" data-role="button" data-icon="check" data-iconpos="notext" data-theme="c" data-inline="true">Agregar</a>
-	<a href="#" onclick="hechiED()" data-role="button" data-icon="check" data-iconpos="notext" data-theme="c" data-inline="true">Editar</a>
-</div>
-
-</div>
-
+	
 <script language="javascript">
 window.onload = hechi();
 </script>
+
+<script language="javascript">
+
+/*Valor 0 es desactivado, valor 1 activado*/
+ /*nurgle = 0
+ slaanesh = 0
+ tzeentch  = 0*/
+ marca = 0
+ armadura = 0
+ nivel = 0
+
+ /*hechicero*/
+ function hechi(){
+		
+	if (nivel == 0 )
+	{
+	var GHpuntos = document.getElementById('puntos')
+		GHpuntos.innerHTML = parseInt(GHpuntos.innerHTML)+35
+		
+		 nivel = 1
+		//alert('The city of ' + armadura +'.');
+
+	}
+else
+	{
+		var GHpuntos = document.getElementById('puntos')
+		GHpuntos.innerHTML = parseInt(GHpuntos.innerHTML)-35
+		nivel = 0
+		//alert('The city of ' + armadura +'.');
+	}	
+	
+}
+
+ 
+/*armadura del caos*/
+function acaos(){
+		
+	if (armadura == 0 )
+	{
+		var GHm = document.getElementById('SV')
+		GHm.innerHTML = 3
+		 armadura = 1
+		//alert('The city of ' + armadura +'.');
+
+	}
+else
+	{
+		var GHm = document.getElementById('SV')
+		GHm.innerHTML = "-"
+		armadura = 0
+		//alert('The city of ' + armadura +'.');
+	}	
+	
+}
+
+/*marca*/
+function mnurgle(){
+		
+	if ( marca != 1)
+	{
+		var GHpuntos = document.getElementById('puntos')
+		GHpuntos.innerHTML = 235 +20;
+		marca = 1
+		nivel = 0
+
+	}
+	else if (marca == 1)
+	{
+		var GHpuntos = document.getElementById('puntos')
+		GHpuntos.innerHTML = 235;
+		marca = 0
+		nivel = 0
+	}	
+	
+}
+
+function mslaanesh(){
+		
+	if (marca != 2)
+	{
+		var GHpuntos = document.getElementById('puntos')
+		GHpuntos.innerHTML = 235+5;
+		marca = 2
+		nivel = 0
+	}
+else if (marca == 2)
+	{
+		var GHpuntos = document.getElementById('puntos')
+		GHpuntos.innerHTML = 235;
+		marca = 0
+		nivel = 0
+	}	
+	
+}
+
+function mtzeentch(){
+		
+	if (marca != 3 )
+	{
+		var GHpuntos = document.getElementById('puntos')
+		GHpuntos.innerHTML = 235+2;
+		marca = 3
+		nivel = 0
+	}
+else if (marca == 3)
+	{
+		var GHpuntos = document.getElementById('puntos')
+		GHpuntos.innerHTML = 235;
+		marca = 0
+		nivel = 0
+	}	
+	
+
+
+}
+
+</script>
+<hr/>
+<p><b>MARCAS</b></p>
+<hr/>
+	<a href="#" onclick="mnurgle()" data-role="button">Marca de Nurgle (20)</a>
+	<a href="#" onclick="mslaanesh()" data-role="button">Marca de Slaanesh (5)</a>
+	<a href="#" onclick="mtzeentch()" data-role="button">Marca de Tzeentch (2)</a>
+<hr/>
+<p><b>OPCIONES</b></p>
+<hr/>
+	<a href="#" onclick="acaos()" data-role="button">Armadura del Caos (0)</a>
+	<a href="#" onclick="hechi()" data-role="button">Nivel 4 (35)</a>
+<hr/>
+<p><b>MONTURA</b></p>
+<hr/>
+
+	
+</div>
+
+<div id="editar">
+
+</div>
+
+</div>
+
+
 
 </body>
