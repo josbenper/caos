@@ -3,7 +3,7 @@
 
 <head> 
     <title>Guerreros del caos</title> 
-  
+	
     <meta name="viewport" content="width=device-width, initial-scale=1"> 
 
 <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.css" />
@@ -29,7 +29,7 @@
     <h1>Lista del caos</h1>
 		<div data-role="navbar">
 			<ul>
-				<li><a href="#" onclick="comandantes()">Comandantes</a></li>
+				<li><a href="#" onclick="$.mobile.changePage('#page2')">Comandantes</a></li>
 				<li><a href="#" onclick="heroes()">Heroes</a></li>
 				<li><a href="#" onclick="basicas()">Basicas</a></li>
 				<li><a href="#" onclick="nobasicas()">No basicas</a></li>
@@ -57,4 +57,21 @@
 	</div>
 
 </div>
+
+<div data-role="page" id="page2">
+
+<div data-role="header">
+    <h1>Comandantes</h1>
+		
+	</div><!-- /header -->
+	
+	<div id="unidades">
+	<a href="#" onclick="hechi()" data-role="button"><img width="100" height="75" src="img/hechizero.jpg"> </a>
+	<a href="#" onclick="prindemo()" data-role="button"><img width="100" height="75" src="img/principe-demonio.jpg"></a>
+	<a href="#" onclick="senorcaos()" data-role="button"><img width="100" height="75" src="img/senorcaos.jpg"></a>
+	</div>
+
+</div>
+
+
 </body>
